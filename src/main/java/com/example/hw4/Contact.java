@@ -14,11 +14,11 @@ import javax.validation.constraints.Pattern;
 
 //@Getter
 //@Setter
-//@Entity
+@Entity
 public class Contact {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NotBlank(message = "名字必须至少1个字符")
     private String firstName;
