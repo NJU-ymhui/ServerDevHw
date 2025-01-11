@@ -16,7 +16,7 @@ public class ContactController {
 
     @GetMapping("/")
     public String showForm(Model model) {
-        model.addAttribute("contact", new Contact()); // 添加新 Contact 对象
+        model.addAttribute("contact", new Contact()); // 初始化一个空的Contact对象确保contacts.html可以识别到类
         model.addAttribute("contacts", contactRepository.findAll());
         return "contacts";
     }
@@ -24,7 +24,7 @@ public class ContactController {
     @PostMapping("/")
     public String submitForm(@Valid Contact contact, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("contact", contact); // 保留有验证错误的 Contact 对象
+            model.addAttribute("contact", contact);
             model.addAttribute("contacts", contactRepository.findAll());
             return "contacts";
         }

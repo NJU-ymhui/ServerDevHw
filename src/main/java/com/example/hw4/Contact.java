@@ -11,14 +11,16 @@ import lombok.Setter;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 //@Getter
 //@Setter
-@Entity
+//@Entity
+@Document(collection = "contacts")
 public class Contact {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
 
     @NotBlank(message = "名字必须至少1个字符")
     private String firstName;
